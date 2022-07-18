@@ -38,6 +38,7 @@ func main3() {
 	// Là từ khóa mà thực chỉ thi phần phía sau của của nó sau khi 1 funcion kết thúc
 	// Defer mang 1 đăc tính quan trọng là stacking(xếp trồng lên nhau) last in first out
 	for i := 0; i < 10; i++ {
-		defer fmt.Println(i)
+		fmt.Println("fist: %D", i)
+		defer fmt.Println("last: %D", i)
 	}
 }

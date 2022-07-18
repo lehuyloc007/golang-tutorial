@@ -54,7 +54,7 @@ func main6() {
 	f := c[3:] //cách 2 e []int = primes[3:]
 	fmt.Println(f)
 
-	//Slice bản chất là cấu trúc dữ liêu
+	//SLICES bản chất là cấu trúc dữ liêu. Có thể gọi kiểu này là mảng
 	//Bên trong nó là 1 cái mảng , length(len) và capacity(cap)
 	// Trong đó: len() là độ chứa hiện tại, cap() là độ chứa tối đa
 	g := []int{2, 3, 4, 5, 9, 7, 8}
@@ -69,4 +69,20 @@ func main6() {
 	//cách1: khai báo slice có len và cap khác nhau
 	l := make([]int, 2, 5)
 	fmt.Printf("len=%d cap=%d %v\n", len(l), cap(l), l)
+
+	//slice of slice: là mảng 2 chiều
+
+	//thêm phần tử vào slices
+	//append(mảng cần thêm, ...các phần tử cần thêm vào mảng)
+	m := []int{}
+	fmt.Printf("len=%d cap=%d %v\n", len(m), cap(m), m)
+	m = append(m, 1, 2, 3, 5)
+	fmt.Printf("len=%d cap=%d %v\n", len(m), cap(m), m)
+
+	//RANGE: thường đi với for dùng để lấy ra từng phần của mảng
+	n := []int{1, 2, 4, 8, 16, 32, 64, 128}
+	//Range khai báo1: for biến1, biến2 := range mảng
+	for o, p := range n {
+		fmt.Printf("2**%d = %d\n", o, p)
+	}
 }
