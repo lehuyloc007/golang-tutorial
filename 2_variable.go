@@ -33,6 +33,7 @@ func main2() {
 	fmt.Printf("type of g %T", g)
 
 	//constants là biến được khai báo ra và không thể thay đổi được trong suốt vòng đời của nó và không thể khai báo bằng dấu :=
+	// const là biến được đưa vào vùng nhớ read only
 	const Pi float64 = 3.14
 
 }
