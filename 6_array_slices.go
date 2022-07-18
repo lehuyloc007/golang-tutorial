@@ -4,12 +4,38 @@ import (
 	"fmt"
 )
 
+type Vertex1 struct {
+	Lat, Long float64
+}
+
+var q map[string]Vertex1
+
+//cách khai báo2(map) khai báo và cấp phát luôn
+var z = map[string]Vertex1{
+	"Bell Labs": Vertex1{
+		40.68433, -74.39967,
+	},
+	"Google": Vertex1{
+		37.68433, -122.39967,
+	},
+}
+
+//cách khai báo3(map) khai báo và cấp phát luôn nhưng ko cần Vertex trong item
+//var z = map[string]Vertex1{
+//"Bell Labs": {
+//40.68433, -74.39967,
+//},
+//"Google": {
+//37.68433, -122.39967,
+//},
+//}
+
 func main6() {
 	//Array trong Go thì là mảng cố định không hơn ko kém nên không thể thay đổi thêm bớt thành phần trong đó
 	//Nguyên tắc của mảng length là cố định
 	//Bản chất khi ta thêm hoặc bớt phần tử vào mảng là nó copy mảng cũ ra mảng mới với số lượng phần tử lớn hơn mảng cũ và xoá hoặc thêm vào mảng mới
 	var a [2]string //Khai báo mảng có 2 phần tử dạng string
-	//Cách khai báo và gán sau
+	//Cách khai báo trước và gán sau
 	a[0] = "Hello"
 	a[1] = "World"
 	fmt.Println(a[0], a[1])
@@ -81,8 +107,42 @@ func main6() {
 
 	//RANGE: thường đi với for dùng để lấy ra từng phần của mảng
 	n := []int{1, 2, 4, 8, 16, 32, 64, 128}
-	//Range khai báo1: for biến1, biến2 := range mảng
+	//Range khai báo1: for biến1, biến2 := range mảng cần lặp
+	// trong đó biến 1 là index biến 2 là value
 	for o, p := range n {
 		fmt.Printf("2**%d = %d\n", o, p)
 	}
+
+	//Range khai báo2: for biến1 := range mảng cần lặp
+	// trong đó biến 1 là index
+	//for o:= range n {
+	//fmt.Printf("%d\n", o)
+	//}
+
+	//Range khai báo3: for _, biến1 := range mảng cần lặp
+	// trong đó biến 1 là value
+	//for _, o:= range n {
+	//fmt.Printf("%d\n", o)
+	//}
+
+	//MAP là key value
+	//cấp phát bằng make
+	//cách khai báo1(map)
+	q = make(map[string]Vertex1)
+	q["Bell Labs"] = Vertex1{
+		40.68433, -74.39967,
+	}
+	fmt.Println(q["Bell Labs"])
+
+	fmt.Println(z)
+	//cập nhật hoặc thêm mới element trong map
+	z["Bell Labs"] = Vertex1{10, 30}
+	fmt.Println(z)
+	//xóa 1 element trong map
+	delete(z, "Bell Labs")
+	fmt.Println(z)
+	//kiểm tra key có xuất hiện hay không bằng phép gán hai giá trị
+	//khi mà tra kiểm tra key mà ko có trong map thì value trả về bằng 0 mà ta ko biết nó va lue nó có là 0 hay 0 nên tra phải dùng cách này để kiểm tra
+	elem, ok := z["Bell Labs"]
+	fmt.Println("The value:", elem, "Present?", ok)
 }
