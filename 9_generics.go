@@ -4,21 +4,23 @@ import (
 	"fmt"
 )
 
-// function closures
-// Một closure là một function value tham chiếu đến các biến từ bên người phần thân của nó
-// Hàm có thể truy cập và gán cho các biến được tham chiếu; theo nghĩa này, hàm được "ràng buộc" với các biến.
-
-//function trả về 1 kiểu là function func(int) int nên sẽ phải return giống vậy
-func adder() func(int) int {
-	sum := 0
-	return func(x int) int {
-		sum += x
-		return sum
+func Index[T comparable](s []T, x T) int {
+	for i, v := range s {
+		// v and x are type T, which has the comparable
+		// constraint, so we can use == here.
+		if v == x {
+			return i
+		}
 	}
+	return -1
 }
-func main8() {
-	pos := adder()
-	for i := 0; i < 10; i++ {
-		fmt.Println(pos(i))
-	}
+
+func main9() {
+	// Index works on a slice of ints
+	si := []int{10, 20, 15, -10}
+	fmt.Println(Index(si, 15))
+
+	// Index also works on a slice of strings
+	ss := []string{"foo", "bar", "baz"}
+	fmt.Println(Index(ss, "hello"))
 }
