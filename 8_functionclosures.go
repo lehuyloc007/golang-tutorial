@@ -5,7 +5,7 @@ import (
 )
 
 // function closures
-// Một closure là một function value tham chiếu đến các biến từ bên người phần thân của nó
+// Một closure là một function value tham chiếu đến các biến từ bên ngoài phần thân của nó
 // Hàm có thể truy cập và gán cho các biến được tham chiếu; theo nghĩa này, hàm được "ràng buộc" với các biến.
 
 //function adder trả về 1 kiểu là function "func(int) int" nên sẽ phải return giống vậy
