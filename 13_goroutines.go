@@ -6,7 +6,7 @@ import (
 )
 
 /*---goroutines---*/
-//Goroutines là một trong những tính năng đặc biệt nhất của Golang để lập trình Concurrency(song song) cực kỳ đơn giản.
+//Goroutines là một trong những tính năng đặc biệt nhất của Golang để lập trình Concurrency(đồng thời) cực kỳ đơn giản.
 //https://viblo.asia/p/phan-biet-concurrency-va-parallelism-trong-lap-trinh-gAm5y8PVldb
 //Goroutines bản chất là các hàm (function) hay method được thực thi một các độc lập và đồng thời nhưng vẫn có thể kết nối với nhau.
 //Một cách ngắn gọn, những thực thi đồng thời được gọi là Goroutines trong Go (Golang).
