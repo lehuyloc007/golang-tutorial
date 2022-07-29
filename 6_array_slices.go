@@ -12,10 +12,10 @@ var q map[string]Vertex1
 
 //cách khai báo2(map) khai báo và cấp phát luôn
 var z = map[string]Vertex1{
-	"Bell Labs": Vertex1{
+	"Bell Labs": {
 		40.68433, -74.39967,
 	},
-	"Google": Vertex1{
+	"Google": {
 		37.68433, -122.39967,
 	},
 }
