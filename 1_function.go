@@ -3,7 +3,6 @@
 package main
 
 // thư viện dùng để in ra
-import "fmt"
 
 //khi khai báo thì phải khai báo kiểu của biến truyền vào và kiểu trả về
 // có 2 cách khai báo kiểu biến truyền vào
@@ -30,23 +29,25 @@ func split(sum int) (x, y int) {
 }
 
 func main() {
-	fmt.Println("Hello, World!")
+	// fmt.Println("Hello, World!")
 
-	fmt.Println(add1(4, 3))
+	// fmt.Println(add1(4, 3))
 
-	fmt.Println(add2(4, 3, 1))
+	// fmt.Println(add2(4, 3, 1))
 
 	//có thể khai báo biến để gán cho function bên trong trả về
-	a, b := swap("world", "hello")
-	fmt.Println(a, b)
+	// a, b := swap("world", "hello")
+	// fmt.Println(a, b)
 
-	fmt.Println(split(17))
+	// fmt.Println(split(17))
 
 	//trong 1 project go chỉ có 1 function main
-	main2()
-	main3()
-	main4()
-	main5()
-	main6()
-	main7()
+	// main2()
+	// main3()
+	// main4()
+	// main5()
+	// main6()
+	// main7()
+	// main16()
+	main17()
 }
